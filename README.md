@@ -90,7 +90,10 @@ You can use the following script to install the environment：
 ```bash
 conda create -n falcon python=3.10
 conda activate falcon
+pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu118
+wget wget https://ghproxy.com/https://github.com/Dao-AILab/flash-attention/releases/download/v2.5.4/flash_attn-2.5.4+cu118torch2.3cxx11abiFALSE-cp310-cp310-linux_x86_64.whl
 pip install -r requirements.txt
+pip install flash_attn-2.5.4+cu118torch2.3cxx11abiFALSE-cp310-cp310-linux_x86_64.whl
 ```
 Optionally, we also provide a Docker image in [here](https://hub.docker.com/r/tianhuilab/falcon/tags) for fast deployment of the environment. You can use the following script to pull this Docker image：
 ```bash
@@ -320,19 +323,4 @@ python eval/evaluation.py \
 
 This project is released under the [MIT license](LICENSE). Parts of this project contain code and models from other sources, which are subject to their respective licenses.
 
-## Citation
 
-If you find this project useful in your research, please consider cite:
-
-```BibTeX
-@article{yao2025falcon,
-  title={Falcon: A Remote Sensing Vision-Language Foundation Model},
-  author={kelu, Yao and Nuo, Xu and Rong, Yang and Yingying, Xu and Zhuoyan, Gao and Titinunt, Kitrungrotsakul and yi, Ren and Pu, Zhang and Jin, Wang and Ning, Wei and Chao, Li},
-  journal={arXiv preprint arXiv:2503.11070},
-  year={2025}
-}
-```
-
-## Acknowledgement
-
-Falcon is built with reference to the code of the following projects: [Florence-2-base-ft](https://huggingface.co/microsoft/Florence-2-base-ft), [Florence-2-large-ft](https://huggingface.co/microsoft/Florence-2-large-ft), [florence2-finetuning](https://github.com/andimarafioti/florence2-finetuning). Thanks for their awesome work!
